@@ -1,6 +1,6 @@
 # Rendimiento Aereo: Visualizacion de Retrasos y Eficiencia Operacional en Vuelos Comerciales (2023)
 
-##  Informaciin General
+##  Informacion General
 * **Asignatura:** EIN092B - Visualizacion de Datos
 * **Institucion:** Universidad Tecnica Federico Santa Maria
 * **Integrantes:**
