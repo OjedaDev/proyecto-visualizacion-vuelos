@@ -216,3 +216,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Ignorar datasets pesados
+data/raw/*.csv
+data/processed/*.csv
+*.zip
+*.parquet
+.ipynb_checkpoints/
