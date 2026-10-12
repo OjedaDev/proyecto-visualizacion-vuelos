@@ -33,16 +33,34 @@ La aviacion comercial opera bajo ventanas de tiempo sumamente ajustadas. Los ret
 
 ---
 
+## 🚀 Instrucciones para Ejecutar la Aplicación Streamlit
+
+###  Clonar el repositorio
+```bash
+git clone [https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git](https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git)
+cd proyecto-visualizacion-vuelos
+2. Instalar dependencias
+pip install -r requirements.txt
+3. Iniciar la aplicación interactiva
+python -m streamlit run app/app.py
+
+
 ## 📁 Estructura del Repositorio
-```text
-proyecto-visualizacion/
+proyecto-visualizacion-vuelos/
 ├── data/
-│   ├── raw/            # Datos originales sin modificar
-│   └── processed/      # Datos limpios y procesados
+│   ├── raw/            # Datos originales de la BTS y clima (excluidos en .gitignore)
+│   └── processed/      # Datasets limpios y transformados
 ├── notebooks/
-│   └── 01_exploracion.ipynb  # Análisis exploratorio inicial
-├── src/                # Scripts auxiliares y módulos reutilizables
-├── figures/            # Gráficos generados para presentaciones
-├── app/                # Prototipo y aplicación interactiva
-├── .gitignore          # Archivos excluidos de Git
+│   ├── 01_exploracion.ipynb  # Carga inicial y exploración
+│   └── 02_eda.ipynb          # Análisis exploratorio profundo
+├── src/
+│   └── clean_data.py   # Módulo de limpieza y generación de variables
+├── app/
+│   ├── app.py          # Punto de entrada principal de Streamlit
+│   └── pages/
+│       ├── 1_Contexto.py  # Página 1: Contexto, métricas y datos
+│       ├── 2_EDA.py       # Página 2: EDA univariado y filtros
+│       └── 3_Analisis.py  # Página 3: Relaciones X vs Y y hallazgos
+├── .gitignore          # Exclusión de archivos pesados y cachés
+├── requirements.txt    # Librerías y dependencias
 └── README.md           # Documentación principal del proyecto
