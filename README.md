@@ -1,12 +1,12 @@
 # Rendimiento Aereo: Visualizacion de Retrasos y Eficiencia Operacional en Vuelos Comerciales (2023)
 
-##  Informaciin General
+##  Informacion General
 * **Asignatura:** EIN092B - Visualizacion de Datos
 * **Institucion:** Universidad Tecnica Federico Santa Maria
 * **Integrantes:**
-  * [Joaquin Ojeda] 
-  * [Benjamin Garcia] 
-  * [Matias Pinto] 
+  * Joaquin Ojeda 
+  * Benjamin Garcia
+  * Matias Pinto 
 ---
 
 ##  Problema y Motivacion
@@ -36,14 +36,14 @@ La aviacion comercial opera bajo ventanas de tiempo sumamente ajustadas. Los ret
 ## 🚀 Instrucciones para Ejecutar la Aplicación Streamlit
 
 ###  Clonar el repositorio
-```bash
-git clone [https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git](https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git)
+
+1. git clone [https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git](https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git)
 cd proyecto-visualizacion-vuelos
 2. Instalar dependencias
 pip install -r requirements.txt
 3. Iniciar la aplicación interactiva
 python -m streamlit run app/app.py
-
+---
 
 ## 📁 Estructura del Repositorio
 proyecto-visualizacion-vuelos/
