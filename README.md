@@ -55,7 +55,7 @@ cd proyecto-visualizacion-vuelos
 
 git push origin main --force
 
-streamlit run app/app.py
+python -m streamlit run app/app.py  
 
 proyecto-visualizacion-vuelos/
 ├── data/
