@@ -31,7 +31,6 @@ La aviacion comercial opera bajo ventanas de tiempo sumamente ajustadas. Los ret
   1. Descargar el archivo `.csv` desde el portal oficial de la BTS o repositorio complementario.
   2. Guardar el archivo en la ruta local `data/raw/flights_2023.csv`.
 
----
 
 ## 🚀 Instrucciones para Ejecutar la Aplicación Streamlit
 
@@ -44,6 +43,9 @@ pip install -r requirements.txt
 3. Iniciar la aplicación interactiva
 python -m streamlit run app/app.py
 ---
+
+
+
 
 ## 📁 Estructura del Repositorio
 proyecto-visualizacion-vuelos/
