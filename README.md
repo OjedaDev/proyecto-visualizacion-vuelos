@@ -1,53 +1,62 @@
-# Rendimiento Aereo: Visualizacion de Retrasos y Eficiencia Operacional en Vuelos Comerciales (2023)
+# Rendimiento Aéreo: Visualización de Retrasos y Eficiencia Operacional en Vuelos Comerciales (2023) ✈️
 
-##  Informacion General
-* **Asignatura:** EIN092B - Visualizacion de Datos
-* **Institucion:** Universidad Tecnica Federico Santa Maria
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-red.svg)](https://streamlit.io/)
+[![Plotly](https://img.shields.io/badge/Plotly-5.17%2B-orange.svg)](https://plotly.com/)
+
+## 📌 Información General
+* **Asignatura:** EIN092B - Visualización de Datos
+* **Institución:** Universidad Técnica Federico Santa María
+* **Profesor:** Jesús A. Parra
+* **Semestre:** 2026-II
 * **Integrantes:**
-  * Joaquin Ojeda 
-  * Benjamin Garcia
-  * Matias Pinto 
----
-
-##  Problema y Motivacion
-La aviacion comercial opera bajo ventanas de tiempo sumamente ajustadas. Los retrasos en salida y llegada no solo generan perdidas millonarias, sino que provocan un efecto domino sobre toda la red aerea. Este proyecto busca transformar registros masivos de vuelos en visualizaciones analiticas que permitan identificar cuellos de botella y factores criticos de impuntualidad en rutas clave.
+  * Joaquín Ojeda
+  * Benjamín García
+  * Matías Pinto
 
 ---
 
-##  Pregunta de Investigacion y Estructura X, Y, T
-**Pregunta principal:**  
-*Como influyen las caracteristicas del vuelo, la congestion del aeropuerto y el horario programado en los minutos de retraso y causas de impuntualidad en rutas comerciales?*
-
-* **(X) Variables explicativas:** Aerolinea operadora, aeropuertos de origen y destino, distancia de ruta y bloque horario programado.
-* **(Y) Fenomeno objetivo:** Minutos de retraso (salida/llegada) y causas de demora (operacional, clima, congestion NAS).
-* **(T) Contexto temporal:** Registro historico continuo consolidado durante el año 2023.
+## 🎯 Problema y Motivación
+La aviación comercial opera bajo ventanas de tiempo altamente sincronizadas. Los retrasos en salida y llegada no solo generan pérdidas millonarias, sino que provocan un efecto dominó sobre toda la red aérea. Este proyecto busca transformar registros masivos de vuelos en una **aplicación analítica e interactiva desarrollada en Streamlit**, permitiendo identificar cuellos de botella, factores críticos de impuntualidad y el impacto de condiciones meteorológicas en rutas clave.
 
 ---
 
-## 📊 Dataset y Fuente
-* **Fuente:** *Bureau of Transportation Statistics (BTS) / U.S. Department of Transportation* (Airline On-Time Performance Data).
-* **Unidad de observación:** Un vuelo comercial individual programado y operado.
-* **Instrucciones para obtener los datos:**
-  1. Descargar el archivo `.csv` desde el portal oficial de la BTS o repositorio complementario.
-  2. Guardar el archivo en la ruta local `data/raw/flights_2023.csv`.
+## ❓ Pregunta de Investigación y Estructura X, Y, T
 
+### Pregunta Principal:
+> *¿Cómo influyen las características del vuelo, la congestión del aeropuerto de origen y las condiciones meteorológicas cruzadas en los minutos de retraso, causas de impuntualidad y severidad del retraso en rutas comerciales durante el año 2023?*
+
+### Estructura X, Y, T:
+* **(X) Variables Explicativas:** Aerolínea operadora, aeropuerto de origen y destino, número de vuelo (`Flight_Number`), distancia de ruta (`Distance`), bloque horario programado (`CRSDepTime`) y variables meteorológicas cruzadas (`WindSpeed`, `Visibility`, `Precipitation`).
+* **(Y) Fenómeno Objetivo Dual:** 
+  * *Cuantitativo Continuo (Regresión):* Minutos de retraso en salida (`DepDelay`) y llegada (`ArrDelay`).
+  * *Cualitativo Categorizado (Clasificación):* Severidad del retraso (`A tiempo / Menor <15m`, `Moderado 15-45m`, `Severo >45m`).
+* **(T) Contexto Temporal:** Registro histórico continuo consolidado durante el año 2023 (analizado a nivel horario, diario, mensual y estacional).
+
+---
+
+## 📊 Dataset y Calidad de Datos
+* **Fuente Primaria:** *Bureau of Transportation Statistics (BTS) / U.S. Department of Transportation* (*Airline On-Time Performance Data*).
+* **Fuentes Secundarias:** Enriquecimiento con datos meteorológicos de estaciones aeroportuarias (*NOAA / Open-Meteo*).
+* **Unidad de Observación:** Un vuelo comercial individual programado y operado.
+* **Tratamiento de Calidad:**
+  * Imputación de nulos en marcas de tiempo mediante la mediana del bloque horario.
+  * Eliminación de registros inconsistentes (vuelos con origen igual a destino o distancias nulas).
+  * Análisis mediante métricas robustas (mediana y percentiles) para evitar el sesgo causado por outliers de retraso extremo (>180 min).
+
+---
 
 ## 🚀 Instrucciones para Ejecutar la Aplicación Streamlit
 
-###  Clonar el repositorio
-
-1. git clone [https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git](https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git)
+### 1. Clonar el repositorio
+```bash
+git clone [https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git](https://github.com/OjedaDev/proyecto-visualizacion-vuelos.git)
 cd proyecto-visualizacion-vuelos
-2. Instalar dependencias
-pip install -r requirements.txt
-3. Iniciar la aplicación interactiva
-python -m streamlit run app/app.py
 
+git push origin main --force
 
+streamlit run app/app.py
 
-
-
-## 📁 Estructura del Repositorio
 proyecto-visualizacion-vuelos/
 ├── data/
 │   ├── raw/            # Datos originales de la BTS y clima (excluidos en .gitignore)
