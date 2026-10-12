@@ -42,7 +42,7 @@ cd proyecto-visualizacion-vuelos
 pip install -r requirements.txt
 3. Iniciar la aplicación interactiva
 python -m streamlit run app/app.py
----
+
 
 
 
